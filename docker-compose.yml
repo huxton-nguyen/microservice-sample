@@ -1,0 +1,11 @@
+version: '1.0'
+
+services:
+  msa_postgresql:
+    container_name: msa_postgresql
+    hostname: msa_postgresql
+    image: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: 123456
