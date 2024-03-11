@@ -1,6 +1,7 @@
 package com.huxton.microservice.sample.apigateway.security.filter;
 
 import com.huxton.microservice.sample.apigateway.security.service.JwtService;
+import com.huxton.microservice.sample.apigateway.security.service.UserService;
 import com.huxton.microservice.sample.apigateway.security.validation.JwtValidation;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -28,6 +29,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtValidation jwtValidation;
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService;
+    private final UserService userService;
 
     private final String[] notFilterPaths = new String[]{
             "/api/v1/authentications"

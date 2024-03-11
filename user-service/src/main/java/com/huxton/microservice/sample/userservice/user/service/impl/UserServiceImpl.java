@@ -25,4 +25,9 @@ public class UserServiceImpl implements UserService {
     public UserDto createUser(UserDto dto) {
         return userMapper.mapDtoFromModel(userDao.save(userMapper.mapModelFromDto(dto)));
     }
+
+    @Override
+    public UserDto getUserByEmail(String email) {
+        return userMapper.mapDtoFromModel(userDao.findByEmail(email).orElseThrow());
+    }
 }

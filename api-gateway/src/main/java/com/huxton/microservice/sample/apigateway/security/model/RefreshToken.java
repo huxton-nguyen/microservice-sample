@@ -1,6 +1,6 @@
 package com.huxton.microservice.sample.apigateway.security.model;
 
-import com.huxton.microservice.sample.apigateway.user.model.User;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,11 +21,5 @@ public class RefreshToken {
     @Column(length = 1000)
     private String token;
     private Date expiryDate;
-    @ManyToOne
-    @JoinColumn(
-            name = "user_id",
-            referencedColumnName = "id",
-            unique = false
-    )
-    private User user;
+    private String email;
 }

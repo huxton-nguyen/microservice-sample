@@ -1,6 +1,7 @@
 package com.huxton.microservice.sample.userservice.user.controller;
 
 import com.huxton.microservice.sample.userservice.user.dto.UserDto;
+import jakarta.validation.Valid;
 import lombok.NonNull;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -36,5 +37,11 @@ public interface UserController {
             }
     )
     @ResponseStatus(HttpStatus.OK)
-    ResponseEntity<UserDto> createUser(@RequestBody @NonNull UserDto dto) throws Exception;
+    ResponseEntity<UserDto> createUser(@RequestBody @NonNull @Valid UserDto dto) throws Exception;
+
+    @GetMapping(
+            path = "/email/{email}"
+    )
+    @ResponseStatus(HttpStatus.OK)
+    ResponseEntity<UserDto> getUserByEmail(@PathVariable(value = "email", required = true) String email) throws Exception;
 }

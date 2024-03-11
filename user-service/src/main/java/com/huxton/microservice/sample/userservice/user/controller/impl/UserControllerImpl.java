@@ -25,4 +25,9 @@ public class UserControllerImpl implements UserController {
     public ResponseEntity<UserDto> createUser(@NonNull UserDto dto) throws Exception {
         return ResponseEntity.ok(service.createUser(dto));
     }
+
+    @Override
+    public ResponseEntity<UserDto> getUserByEmail(String email) throws Exception {
+        return ResponseEntity.ok(service.getUserByEmail(email));
+    }
 }

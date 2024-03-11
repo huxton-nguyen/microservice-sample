@@ -16,6 +16,7 @@
     <properties>
         <java.version>17</java.version>
         <jjwt.version>0.12.5</jjwt.version>
+        <spring-webflux.version>6.1.4</spring-webflux.version>
     </properties>
     <dependencies>
         <dependency>
@@ -70,6 +71,13 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
             <version>${jjwt.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webflux -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webflux</artifactId>
+            <version>${spring-webflux.version}</version>
         </dependency>
 
     </dependencies>
